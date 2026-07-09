@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #080812;
+  --color-card: #111126;
+  --color-card2: #16213e;
+  --color-border: rgba(255,255,255,0.07);
+  --color-border2: rgba(255,255,255,0.12);
+  --color-t1: #f1f5f9;
+  --color-t2: #94a3b8;
+  --color-t3: #475569;
+  --color-cyan: #22d3ee;
+  --color-purple: #a78bfa;
+  --color-pink: #f0abfc;
+  --color-orange: #fb923c;
+  --color-green: #4ade80;
+  --color-yellow: #facc15;
+  --color-teal: #2dd4bf;
+  --color-magenta: #e879f9;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --sd: #03030a;
+  --sl: rgba(255,255,255,0.02);
+}
+
+body {
+  background: #080812;
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Orbs de fondo aurora */
+.orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.1; animation: drift 20s ease-in-out infinite alternate; }
+.orb-1 { width: 600px; height: 600px; background: #22d3ee; top: -250px; left: -200px; }
+.orb-2 { width: 500px; height: 500px; background: #a78bfa; bottom: -150px; right: -150px; animation-delay: -8s; }
+.orb-3 { width: 350px; height: 350px; background: #f0abfc; top: 40%; left: 35%; animation-delay: -4s; }
+@keyframes drift { from { transform: translate(0,0) scale(1); } to { transform: translate(50px,40px) scale(1.15); } }
+
+@keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+@keyframes thinking { 0%,60%,100% { transform: translateY(0); opacity: 0.3; } 30% { transform: translateY(-6px); opacity: 1; } }
+
+/* Sombras neomorphism reutilizables */
+.shadow-neo { box-shadow: 4px 4px 12px var(--sd), -2px -2px 8px var(--sl); }
+.shadow-neo-lg { box-shadow: 5px 5px 16px var(--sd), -3px -3px 10px var(--sl); }
+.shadow-neo-inset { box-shadow: inset 2px 2px 6px var(--sd); }
